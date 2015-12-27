@@ -1,0 +1,21 @@
+code book
+act_lbl:activity label contains Walk,Walk_UP,Walk_DN,Sit,Stand,Lay depending on what activity subject is doing
+subject:person whose activities are captured-identified by id
+sd_acc_x- std deviation of acc_x
+sd_acc_y-std deviation of acc_y
+sd_acc_z-std deviation of acc_z
+sd_gyr_x-std deviation of gyro x
+sd_gyr_y-std deviation of gyro y
+sd_gyr_z-std deviation of gyro z
+sd_total_acc_x- std deviation of total acceleration along x
+sd_total_acc_y-std deviation of total acceleratiob along y
+sd_total_acc_z-std deviation of total accelaration along z
+avg_acc_x-mean of acceleration along x
+avg_acc_y-mean of acceleration along y
+avg_acc_z-mean of acceleration along z
+avg_gyr_x-mean of gyro-x
+avg_gyr_y-mean of gyro_y
+avg_gyr_z-mean of gyro_z
+avg_total_acc_x-mean of total acceleration along x
+avg_total_acc_y-mean of total acceleration along y
+avg_total_acc_z-mean of total accelaration along z
