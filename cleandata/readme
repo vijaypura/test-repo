@@ -1,0 +1,6 @@
+create sub folder by name UCI HAR Dataset
+In this folder put train folder containing training data
+In this folder put test folder containg test data
+create another folder by name comb to store combined data
+open a new project in R studio and add util.r and run_analysis.r
+compile util.r before running run_analysis.r
