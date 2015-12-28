@@ -1,3 +1,4 @@
+
 path1="\UCI HAR Dataset\test\Inertial Signals"
 path2="\UCI HAR Dataset\train\Inertial Signals"
 path3="\UCI HAR Dataset\comb\Inertial Signals"
@@ -104,11 +105,16 @@ tidy<-cbind(tidy,avg_acc_x,avg_acc_y,avg_acc_z)
 tidy<-cbind(tidy,avg_gyr_x,avg_gyr_y,avg_gyr_z)
 tidy<-cbind(tidy,avg_total_acc_x,avg_total_acc_y,avg_total_acc_z)
 ##adding subject
-tidy<-cbind(subject_comb,tidy)
-##adding activity
-activity<-as.character(c("Walk","Walk_UP","Walk_DN","SIT","STAND","LAY"))
-act_lbl<-rep(activity,length.out=nrow(x_comb))
-tidy<-cbind(act_lbl,tidy)
+
+#act_lbl<-rep(activity,length.out=nrow(x_comb))
+tidy<-cbind(y_comb,tidy)##adding activity in numeric format
+names(tidy)[1]<-paste("Activity")
+tidy$Activity<-replace(tidy$Activity,tidy$Activity == 1,"Walk")
+tidy$Activity<-replace(tidy$Activity,tidy$Activity == 2,"Walk UP")
+tidy$Activity<-replace(tidy$Activity,tidy$Activity == 3,"Walk DN")
+tidy$Activity<-replace(tidy$Activity,tidy$Activity == 4,"SIT")
+tidy$Activity<-replace(tidy$Activity,tidy$Activity == 5,"STAND")
+tidy$Activity<-replace(tidy$Activity,tidy$Activity == 6,"LAY")
 #writing tidy.txt
 names(tidy)[2]<-paste("subject")
 write.table(tidy,"tidy.txt",col.names=TRUE,row.names = FALSE,sep=" ")
